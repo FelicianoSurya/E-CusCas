@@ -13,7 +13,7 @@ public class Login_page extends AppCompatActivity {
 
     private EditText etUsername, etPassword;
     private Button btnLogin;
-    private TextView warning;
+    private TextView warning, signUp;
     private String username, password;
 
     @Override
@@ -25,6 +25,7 @@ public class Login_page extends AppCompatActivity {
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         warning = (TextView) findViewById(R.id.warning);
+        signUp = (TextView) findViewById(R.id.signUp);
 
         warning.setText("");
 
@@ -34,23 +35,26 @@ public class Login_page extends AppCompatActivity {
                 username = etUsername.getText().toString();
                 password = etPassword.getText().toString();
 
-                if(!isNull(username)) {
-                    if(!isNull(password)) {
-                        if(username.equals("admin")) {
-                            if(password.equals("admin")) {
-                                //move activity
-                            } else {
-                                warning.setText("Password salah.");
-                            }
+                if(!isNull(username) || !isNull(password)) {
+                    if(username.equals("admin")) {
+                        if(password.equals("admin")) {
+                            //move activity Home
                         } else {
-                            warning.setText("Username salah.");
+                            warning.setText("Incorrect Password!");
                         }
                     } else {
-                        warning.setText("Password harap diisi.");
+                        warning.setText("Incorrect Username!");
                     }
                 } else {
-                    warning.setText("Username harap diisi.");
+                    warning.setText("Username and Password cannot be empty!");
                 }
+            }
+        });
+
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //move activity SignUp
             }
         });
     }
