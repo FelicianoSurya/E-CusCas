@@ -1,7 +1,6 @@
 package id.ac.umn.e_cuscas;
 
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,11 +20,11 @@ public class Login_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
-        etUsername = (EditText) findViewById(R.id.etUsername);
-        etPassword = (EditText) findViewById(R.id.etPassword);
-        btnLogin = (Button) findViewById(R.id.btnLogin);
+        etUsername = (EditText) findViewById(R.id.etName);
+        etPassword = (EditText) findViewById(R.id.etUsername);
+        btnLogin = (Button) findViewById(R.id.btnRegister);
         warning = (TextView) findViewById(R.id.warning);
-        signUp = (TextView) findViewById(R.id.signUp);
+        signUp = (TextView) findViewById(R.id.tvLogin);
 
         warning.setText("");
 
