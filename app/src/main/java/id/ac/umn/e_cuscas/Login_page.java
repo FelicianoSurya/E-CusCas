@@ -38,7 +38,8 @@ public class Login_page extends AppCompatActivity {
                 if(!isNull(username) || !isNull(password)) {
                     if(username.equals("admin")) {
                         if(password.equals("admin")) {
-                            //move activity Home
+                            Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(goToNextActivity);
                         } else {
                             warning.setText("Incorrect Password!");
                         }
