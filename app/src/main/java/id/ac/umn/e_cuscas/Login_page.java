@@ -1,5 +1,6 @@
 package id.ac.umn.e_cuscas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,7 @@ public class Login_page extends AppCompatActivity {
         etUsername = (EditText) findViewById(R.id.etName);
         etPassword = (EditText) findViewById(R.id.etUsername);
         btnLogin = (Button) findViewById(R.id.btnRegister);
-        warning = (TextView) findViewById(R.id.warning);
+        warning = (TextView) findViewById(R.id.tvWarning);
         signUp = (TextView) findViewById(R.id.tvLogin);
 
         warning.setText("");
@@ -53,7 +54,8 @@ public class Login_page extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //move activity SignUp
+                Intent toSignUp = new Intent(Login_page.this, Signup_page.class);
+                startActivity(toSignUp);
             }
         });
     }
