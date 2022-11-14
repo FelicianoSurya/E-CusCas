@@ -31,7 +31,6 @@ public class Signup_page extends AppCompatActivity {
 
         tvLogin = (TextView) findViewById(R.id.tvLogin);
         tvWarning = (TextView) findViewById(R.id.tvWarning);
-
         tvWarning.setText("");
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
