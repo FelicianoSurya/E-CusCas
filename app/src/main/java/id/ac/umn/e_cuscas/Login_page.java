@@ -1,5 +1,6 @@
 package id.ac.umn.e_cuscas;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import java.util.List;
 
 public class Login_page extends AppCompatActivity {
 
@@ -15,6 +20,7 @@ public class Login_page extends AppCompatActivity {
     private Button btnLogin;
     private TextView warning, signUp;
     private String username, password;
+    private UserViewModel usrVM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,8 @@ public class Login_page extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btnRegister);
         warning = (TextView) findViewById(R.id.tvWarning);
         signUp = (TextView) findViewById(R.id.tvLogin);
+
+        //usrVM = ViewModelProviders.of(this).get(UserViewModel.class);
 
         warning.setText("");
 
