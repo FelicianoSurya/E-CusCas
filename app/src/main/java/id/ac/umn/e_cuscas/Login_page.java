@@ -1,7 +1,7 @@
 package id.ac.umn.e_cuscas;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,10 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
-import java.util.List;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class Login_page extends AppCompatActivity {
 
@@ -20,10 +17,10 @@ public class Login_page extends AppCompatActivity {
     private Button btnLogin;
     private TextView warning, signUp;
     private String username, password;
-    private UserViewModel usrVM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
@@ -32,8 +29,6 @@ public class Login_page extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btnRegister);
         warning = (TextView) findViewById(R.id.tvWarning);
         signUp = (TextView) findViewById(R.id.tvLogin);
-
-        //usrVM = ViewModelProviders.of(this).get(UserViewModel.class);
 
         warning.setText("");
 
@@ -49,12 +44,15 @@ public class Login_page extends AppCompatActivity {
                             Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(goToNextActivity);
                         } else {
+                            warning.setTextColor(Color.RED);
                             warning.setText("Incorrect Password!");
                         }
                     } else {
+                        warning.setTextColor(Color.RED);
                         warning.setText("Incorrect Username!");
                     }
                 } else {
+                    warning.setTextColor(Color.RED);
                     warning.setText("Username and Password cannot be empty!");
                 }
             }
@@ -64,9 +62,21 @@ public class Login_page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent toSignUp = new Intent(Login_page.this, Signup_page.class);
-                startActivity(toSignUp);
+                startActivityForResult(toSignUp, 1);
             }
         });
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            if(resultCode == RESULT_OK){
+                String ans = data.getStringExtra("Username");
+                etUsername.setText(ans);
+                warning.setTextColor(Color.GREEN);
+                warning.setText("Registration Complete!\n Please enter your Password");
+            }
+        }
     }
 
     boolean isNull(String string){

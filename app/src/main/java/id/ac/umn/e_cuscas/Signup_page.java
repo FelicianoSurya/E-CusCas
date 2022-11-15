@@ -1,5 +1,6 @@
 package id.ac.umn.e_cuscas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,10 +48,23 @@ public class Signup_page extends AppCompatActivity {
 
                 if(!isNull(name) || !isNull(username) || !isNull(password) || !isNull(phone) || !isNull(email) || !isNull(address)) {
                     //input to database
-
+                    Intent ans = new Intent();
+                    ans.putExtra("Username", username);
+                    setResult(RESULT_OK, ans);
+                    finish();
                 } else {
                     tvWarning.setText("Please fill out all field!");
                 }
+            }
+        });
+
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent ans = new Intent();
+                setResult(RESULT_CANCELED, ans);
+                finish();
             }
         });
     }
