@@ -16,7 +16,7 @@ public interface UserDAO {
     LiveData<List<User>> getAllUser();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void inset(User usr);
+    void insert(User usr);
 
     @Delete
     void delete(User usr);
@@ -26,5 +26,4 @@ public interface UserDAO {
 
     @Query("DELETE FROM tblUser")
     void deleteAll();
-
 }
