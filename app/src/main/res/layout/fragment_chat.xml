@@ -44,7 +44,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+            android:id="@+id/tab1"
             android:layout_width="435dp"
             android:layout_height="116dp"
             android:layout_marginTop="64dp"
@@ -79,7 +79,7 @@
             android:elevation="3dp"
             app:layout_constraintCircleRadius="300dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout2" />
+            app:layout_constraintTop_toTopOf="@+id/tab1" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
@@ -92,7 +92,7 @@
             android:elevation="3dp"
             app:layout_constraintCircleRadius="300dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/tab1">
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
