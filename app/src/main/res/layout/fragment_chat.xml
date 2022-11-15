@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,5 +11,104 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="CHAT" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout1"
+            android:layout_width="424dp"
+            android:layout_height="81dp"
+            android:background="@drawable/rounded_layout2"
+            android:elevation="3dp"
+            app:layout_constraintCircleRadius="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="150dp"
+                android:layout_height="46dp"
+                android:text="Live Chat"
+                android:textColor="#000000"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="435dp"
+            android:layout_height="116dp"
+            android:background="@drawable/rounded_layout2"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="3dp"
+            app:layout_constraintCircleRadius="300dp"
+            tools:layout_editor_absoluteX="-11dp"
+            tools:layout_editor_absoluteY="60dp" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="324dp"
+                android:layout_height="58dp"
+                android:text="We are online! Please type your message or comment and we will connect you to one of our operators right away..."
+                android:textAlignment="center"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="55dp"
+                tools:layout_editor_absoluteY="29dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout6"
+            android:layout_width="422dp"
+            android:layout_height="129dp"
+            android:background="@drawable/rounded_layout"
+            android:backgroundTint="@color/LightOrange"
+            android:elevation="3dp"
+            app:layout_constraintCircleRadius="300dp"
+            tools:layout_editor_absoluteX="-6dp"
+            tools:layout_editor_absoluteY="609dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="287dp"
+            android:layout_height="63dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/BoldOrange"
+            android:elevation="3dp"
+            app:layout_constraintCircleRadius="300dp"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="191dp" >
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="287dp"
+            android:layout_height="63dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#E4DCC3"
+            android:elevation="3dp"
+            app:layout_constraintCircleRadius="300dp"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="284dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout5"
+            android:layout_width="287dp"
+            android:layout_height="63dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/BoldOrange"
+            android:elevation="3dp"
+            app:layout_constraintCircleRadius="300dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="379dp">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
