@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_centerVertical="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout1"
@@ -13,11 +14,11 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="81dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.407"
+            app:layout_constraintHorizontal_bias="0.595"
             app:layout_constraintStart_toEndOf="@+id/welcome2"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/logo" />
@@ -26,14 +27,14 @@
             android:id="@+id/welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/nunito_extrabold"
             android:text="Sign Up"
             android:textColor="#000000"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintHorizontal_bias="0.157"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,10 +42,10 @@
             android:id="@+id/welcome2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_extrabold"
+            android:fontFamily="@font/nunito_sans"
             android:text="Let’s make an account "
             android:textColor="#000000"
-            android:textSize="24sp"
+            android:textSize="20dp"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="@+id/welcome"
             app:layout_constraintTop_toBottomOf="@+id/welcome" />
@@ -59,7 +60,8 @@
             app:layout_constraintCircleRadius="300dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            tools:textAlignment="center">
 
             <EditText
                 android:id="@+id/etName"
@@ -72,10 +74,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.152"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.094" />
+                app:layout_constraintVertical_bias="0.08" />
 
             <EditText
                 android:id="@+id/etUsername"
@@ -153,10 +155,14 @@
                 android:id="@+id/btnRegister"
                 android:layout_width="200dp"
                 android:layout_height="51dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_button"
                 android:backgroundTint="#FFCD36"
                 android:fontFamily="@font/nunito_extrabold"
                 android:text="Register"
                 android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/etAddress"
                 app:layout_constraintStart_toStartOf="@+id/etAddress"
                 app:layout_constraintTop_toBottomOf="@+id/etAddress"
                 tools:ignore="MissingConstraints,UnknownId" />
@@ -168,6 +174,7 @@
                 android:layout_marginTop="12dp"
                 android:text="Have an account?"
                 android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/btnRegister"
                 app:layout_constraintStart_toStartOf="@+id/btnRegister"
                 app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
@@ -179,6 +186,7 @@
                 android:textColor="#000000"
                 android:textIsSelectable="false"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
