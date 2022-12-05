@@ -181,7 +181,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <ImageView
-            android:id="@+id/imageView41"
+            android:id="@+id/imageView42"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/stiker"
@@ -190,26 +190,26 @@
 
 
         <TextView
-            android:id="@+id/textView51"
+            android:id="@+id/textView52"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Handphone"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView41"
+            app:layout_constraintStart_toEndOf="@+id/imageView42"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView61"
+            android:id="@+id/textView62"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="To : Jl. Samosir II Blok Z12/6, Kota ..."
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView41"
-            app:layout_constraintTop_toBottomOf="@+id/textView51" />
+            app:layout_constraintStart_toEndOf="@+id/imageView42"
+            app:layout_constraintTop_toBottomOf="@+id/textView52" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -218,8 +218,8 @@
             android:text="Rp 100.000"
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView41"
-            app:layout_constraintTop_toBottomOf="@+id/textView61" />
+            app:layout_constraintStart_toStartOf="@+id/textView62"
+            app:layout_constraintTop_toBottomOf="@+id/textView62" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -235,7 +235,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
 
         <ImageView
-            android:id="@+id/imageView41"
+            android:id="@+id/imageView43"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/stiker"
@@ -244,26 +244,26 @@
 
 
         <TextView
-            android:id="@+id/textView51"
+            android:id="@+id/textView53"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Handphone"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView41"
+            app:layout_constraintStart_toEndOf="@+id/imageView43"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView61"
+            android:id="@+id/textView63"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="To : Jl. Samosir II Blok Z12/6, Kota ..."
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView41"
-            app:layout_constraintTop_toBottomOf="@+id/textView51" />
+            app:layout_constraintStart_toEndOf="@+id/imageView43"
+            app:layout_constraintTop_toBottomOf="@+id/textView53" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -272,8 +272,8 @@
             android:text="Rp 100.000"
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView41"
-            app:layout_constraintTop_toBottomOf="@+id/textView61" />
+            app:layout_constraintStart_toEndOf="@+id/imageView43"
+            app:layout_constraintTop_toBottomOf="@+id/textView63" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
