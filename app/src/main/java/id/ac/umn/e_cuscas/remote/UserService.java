@@ -12,7 +12,7 @@ import retrofit2.http.Path;
 public interface UserService {
     @GET("api/posts/")
     Call<User> getUsers();
-    @POST("api/posts/")
+    @POST("v1/register")
     Call<User> addUser(@Body User user);
     @PUT("api/posts/{id}")
     Call<User> updateUser(@Path("id") int id, @Body User user);

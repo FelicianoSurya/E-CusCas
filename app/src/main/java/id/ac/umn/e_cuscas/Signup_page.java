@@ -91,7 +91,7 @@ public class Signup_page extends AppCompatActivity {
         Call<User> call = userService.addUser(u);
         call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<User> call, Response<User> response ) {
                 Intent ans = new Intent();
                 ans.putExtra("Username", username);
                 setResult(RESULT_OK, ans);
