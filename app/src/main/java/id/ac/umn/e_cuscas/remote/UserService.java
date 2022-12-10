@@ -18,8 +18,4 @@ public interface UserService {
     );
     @POST("v1/register")
     Call<User> addUser(@Body User user);
-    //@PUT("api/posts/{id}")
-    //Call<User> updateUser(@Path("id") int id, @Body User user);
-    //@DELETE("api/posts/{id}")
-    //Call<User> deleteUser(@Path("id") int id);
 }

@@ -105,6 +105,9 @@ public class Login_page extends AppCompatActivity {
                 if(response.isSuccessful()){
                     Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(goToNextActivity);
+                } else {
+                    warning.setTextColor(Color.RED);
+                    warning.setText("Wrong Username or Password!");
                 }
             }
 
