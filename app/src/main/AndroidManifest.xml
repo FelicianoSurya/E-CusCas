@@ -29,6 +29,17 @@
         </activity>
         <activity android:name=".Signup_page" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Promo_page" />
+
+        <activity android:name=".DetailOrder" />
+        <activity android:name=".DetailOrderTransaction" />
+        <activity android:name=".OrderAccept" />
+        <activity android:name=".Rating" />
+
+        <activity android:name=".AksesorisDetailOrder" />
+        <activity android:name=".AksesorisDetailOrderTransaction" />
+
+        <activity android:name=".OnProgress" />
 
         <meta-data
             android:name="preloaded_fonts"

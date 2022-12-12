@@ -1,5 +1,6 @@
 package id.ac.umn.e_cuscas;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import java.util.LinkedList;
 
@@ -42,7 +45,6 @@ public class HomeFragment extends Fragment {
     private CategoryAdapter mAdapter;
 
     public HomeFragment() {
-        // Required empty public constructor
     }
 
     /**
@@ -63,6 +65,8 @@ public class HomeFragment extends Fragment {
         return fragment;
     }
 
+    private ImageButton btnPromo;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +79,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         userService = APIUtils.getUserService();
         getCat();
 
@@ -84,7 +89,25 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        // Inflate the layout for this fragment
+        ImageButton Promo = (ImageButton) view.findViewById(R.id.tvPromo);
+        LinearLayout Laptop = (LinearLayout) view.findViewById(R.id.gridLayout);
+
+        Promo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Promo_page.class);
+                startActivity(intent);
+            }
+        });
+
+        Laptop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DetailOrder.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 

@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,13 +67,13 @@ public class MyorderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_myorder, container, false);
-        tab1 = (ConstraintLayout) view.findViewById(R.id.tab1);
+        AppCompatButton OnProgress = (AppCompatButton) view.findViewById(R.id.btnOnProgress);
 
-        tab1.setOnClickListener(new View.OnClickListener() {
+        OnProgress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent det = new Intent(getActivity(), History.class);
-                startActivity(det);
+                Intent intent = new Intent(getActivity(), OnProgress.class);
+                startActivity(intent);
             }
         });
 
