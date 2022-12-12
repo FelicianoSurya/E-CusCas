@@ -103,12 +103,15 @@
                     android:textSize="15dp"
                     tools:backgroundTint="#FFEBAE" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="369dp"
+                <ImageButton
+                    android:id="@+id/tvPromo"
+                    android:layout_width="355dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/diskon" />
+                    android:background="@null"
+                    android:onClick="btnPromo"
+                    android:src="@drawable/diskon"
+                    tools:ignore="OnClick,SpeakableTextPresentCheck" />
 
             </LinearLayout>
 
@@ -136,6 +139,8 @@
                 card_view:cardCornerRadius="20dp">
 
                 <LinearLayout
+                    android:id="@+id/tvlaptop"
+                    android:onClick="btnlaptop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"

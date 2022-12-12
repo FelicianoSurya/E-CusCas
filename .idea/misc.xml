@@ -28,9 +28,6 @@
         <entry key="..\:/KULIAH/SEM 5/Mobile App Programming/UAS/E-CusCas/app/src/main/res/layout/login_page.xml" value="0.264" />
         <entry key="..\:/KULIAH/SEM 5/Mobile App Programming/UAS/E-CusCas/app/src/main/res/layout/signup_page.xml" value="0.264" />
         <entry key="..\:/Users/Kezia/OneDrive/Documents/GitHub/E-CusCas/app/src/main/res/layout/activity_history.xml" value="0.2341485507246377" />
-        <entry key="..\:/Users/Kezia/OneDrive/Documents/GitHub/E-CusCas/app/src/main/res/layout/content_home.xml" value="0.1" />
-        <entry key="..\:/Users/Kezia/OneDrive/Documents/GitHub/E-CusCas/app/src/main/res/layout/daftarcat_item.xml" value="0.8800000000000001" />
-        <entry key="..\:/Users/Kezia/OneDrive/Documents/GitHub/E-CusCas/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/Kezia/OneDrive/Documents/GitHub/E-CusCas/app/src/main/res/layout/fragment_myorder.xml" value="0.4" />
         <entry key="..\:/Users/Kezia/OneDrive/Documents/GitHub/E-CusCas/app/src/main/res/layout/login_page.xml" value="0.264" />
         <entry key="..\:/Users/Kezia/OneDrive/Documents/GitHub/E-CusCas/app/src/main/res/layout/signup_page.xml" value="0.26358695652173914" />
@@ -38,6 +35,7 @@
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/drawable/button_order.xml" value="0.2555" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/drawable/circleYellow.xml" value="0.179" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/drawable/circle_background.xml" value="0.134" />
+        <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/drawable/circle_yellow.xml" value="0.1735" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.1735" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/drawable/ic_baseline_assignment_24.xml" value="0.114" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/drawable/ic_baseline_auto_awesome_24.xml" value="0.1" />
@@ -55,6 +53,7 @@
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/activity_history.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/aksesorisdetailtransaction_page.xml" value="0.264" />
+        <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/content_home.xml" value="0.10185185185185185" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/detailonprogress.xml" value="0.264" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/detailorder_page.xml" value="0.264" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/detailorderaksesoris.xml" value="0.264" />
@@ -67,6 +66,7 @@
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/login_page.xml" value="0.2" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/onprogress_page.xml" value="0.264" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/orderaccepted.xml" value="0.2" />
+        <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/promo_detail.xml" value="0.264" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/rating_page.xml" value="0.2" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/layout/signup_page.xml" value="0.2" />
         <entry key="..\:/Users/deano/OneDrive/Desktop/E-CusCas/app/src/main/res/menu/buttom_menu.xml" value="0.264" />

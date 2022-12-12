@@ -35,6 +35,7 @@
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_extrabold"
+                android:paddingTop="20dp"
                 android:paddingRight="75dp"
                 android:text="Accessoris"
                 android:textAlignment="center"
@@ -60,6 +61,7 @@
                 card_view:cardCornerRadius="20dp">
 
                 <LinearLayout
+                    android:id="@+id/btnAksesoris"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
