@@ -100,7 +100,7 @@ public class Signup_page extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Log.e("Error Register: ", t.getMessage());
+                Log.e("Error Register", t.getMessage());
             }
         });
     }

@@ -3,10 +3,22 @@ package id.ac.umn.e_cuscas;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.LinkedList;
+
+import id.ac.umn.e_cuscas.model.Category;
+import id.ac.umn.e_cuscas.remote.APIUtils;
+import id.ac.umn.e_cuscas.remote.UserService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +35,11 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private UserService userService;
+    private LinkedList<Category> categories = new LinkedList<>();
+    private RecyclerView mRecyclerView;
+    private CategoryAdapter mAdapter;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -58,7 +75,34 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        userService = APIUtils.getUserService();
+        getCat();
+
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclesviewCat);
+        mAdapter = new CategoryAdapter(getActivity(), categories);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
+    }
+
+    private void getCat(){
+        Call<Category> call = userService.getCategories();
+        call.enqueue(new Callback<Category>() {
+
+            @Override
+            public void onResponse(Call<Category> call, Response<Category> response) {
+                if(response.body() != null) {
+                    categories = (LinkedList<Category>) response.body().getCategory();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Category> call, Throwable t) {
+                Log.e("Error HomeFragment", t.getMessage());
+            }
+        });
     }
 }

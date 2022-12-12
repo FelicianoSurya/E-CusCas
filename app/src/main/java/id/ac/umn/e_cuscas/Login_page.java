@@ -113,8 +113,7 @@ public class Login_page extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                warning.setTextColor(Color.RED);
-                warning.setText("Wrong Username or Password!");
+                Log.e("Error Login", t.getMessage());
             }
         });
     }

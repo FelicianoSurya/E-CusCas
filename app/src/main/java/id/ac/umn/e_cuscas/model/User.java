@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class User {
-    private List<User> data;
+    //private List<User> user;
 
     @SerializedName("username")
     @Expose
@@ -51,14 +51,14 @@ public class User {
     public void setAddress(String address) { this.address = address; }
     public void setPhone(String phone) { this.phone = phone; }
 
-    public String getUsername() { return username; }
-    public String getPassword() { return password; }
-    public String getName() { return name; }
-    public String getEmail() { return email; }
-    public String getAddress() { return address; }
-    public String getPhone() { return phone; }
+    //public String getUsername() { return username; }
+    //public String getPassword() { return password; }
+    //public String getName() { return name; }
+    //public String getEmail() { return email; }
+    //public String getAddress() { return address; }
+    //public String getPhone() { return phone; }
 
 
-    public List<User> getData() { return data; }
-    public void setData(List<User> data) { this.data = data; }
+    //public List<User> getUser() { return data; }
+    //public void setData(List<User> data) { this.data = data; }
 }
