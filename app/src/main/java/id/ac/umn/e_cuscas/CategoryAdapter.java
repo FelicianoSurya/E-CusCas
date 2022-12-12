@@ -37,8 +37,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.CatViewHolder holder, int position) {
         Category mCurr = mDaftarCategory.get(position);
-        int img = context.getResources().getIdentifier("@drawable/"+mCurr.getImage(), null, context.getPackageName());
-        holder.ivCat.setImageResource(img);
+//        int img = context.getResources().getIdentifier("@drawable/"+mCurr.getImage(), null, context.getPackageName());
+//        holder.ivCat.setImageResource(img
         holder.tvCat.setText(mCurr.getName());
     }
 
