@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private UserService userService;
-    private LinkedList<Category> categories = new LinkedList<>();
+    private LinkedList<Category> categories;
     private RecyclerView mRecyclerView;
     private CategoryAdapter mAdapter;
 
@@ -80,6 +80,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        categories = new LinkedList<Category>();
+
         userService = APIUtils.getUserService();
         getCat();
 
@@ -90,7 +92,6 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         ImageButton Promo = (ImageButton) view.findViewById(R.id.tvPromo);
-        LinearLayout Laptop = (LinearLayout) view.findViewById(R.id.gridLayout);
 
         Promo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,13 +101,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        /*LinearLayout Laptop = (LinearLayout) view.findViewById(R.id.gridLayout);
         Laptop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), DetailOrder.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         return view;
     }

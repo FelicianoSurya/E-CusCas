@@ -1,12 +1,24 @@
 package id.ac.umn.e_cuscas.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Category {
     private List<Category> category;
 
+    @SerializedName("id")
+    @Expose
     private int id;
-    private String name, image;
+
+    @SerializedName("name")
+    @Expose
+    private String name;
+
+    @SerializedName("image")
+    @Expose
+    private String image;
 
     public Category(int id, String name, String image){
         this.setId(id);
