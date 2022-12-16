@@ -8,8 +8,6 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.PUT;
-import retrofit2.http.Path;
 
 public interface UserService {
     @FormUrlEncoded
@@ -23,5 +21,5 @@ public interface UserService {
     Call<User> addUser(@Body User user);
 
     @GET("v1/getCategory")
-    Call<Category> getCategories();
+    Call<JSONResponse> getCategories();
 }
