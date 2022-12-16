@@ -3,10 +3,10 @@ package id.ac.umn.e_cuscas.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Category {
-    private List<Category> category;
 
     @SerializedName("id")
     @Expose
@@ -26,6 +26,8 @@ public class Category {
         this.setImage(image);
     }
 
+    public Category(){}
+
     public void setId(int id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setImage(String image) { this.image = image; }
@@ -33,8 +35,5 @@ public class Category {
     public int getId() { return id; }
     public String getName() { return name; }
     public String getImage() {return image; }
-
-    public List<Category> getCategory() { return category; }
-    public void setCategory(List<Category> category) { this.category = category; }
 
 }

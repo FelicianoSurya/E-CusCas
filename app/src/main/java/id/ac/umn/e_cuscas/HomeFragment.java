@@ -14,10 +14,12 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 import id.ac.umn.e_cuscas.model.Category;
 import id.ac.umn.e_cuscas.remote.APIUtils;
+import id.ac.umn.e_cuscas.remote.JSONResponse;
 import id.ac.umn.e_cuscas.remote.UserService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -80,15 +82,12 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        categories = new LinkedList<Category>();
-
         userService = APIUtils.getUserService();
         getCat();
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclesviewCat);
-        mAdapter = new CategoryAdapter(getActivity(), categories);
-        mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         ImageButton Promo = (ImageButton) view.findViewById(R.id.tvPromo);
@@ -114,18 +113,20 @@ public class HomeFragment extends Fragment {
     }
 
     private void getCat(){
-        Call<Category> call = userService.getCategories();
-        call.enqueue(new Callback<Category>() {
-
+        Call<JSONResponse> call = userService.getCategories();
+        call.enqueue(new Callback<JSONResponse>() {
             @Override
-            public void onResponse(Call<Category> call, Response<Category> response) {
+            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
                 if(response.body() != null) {
-                    categories = (LinkedList<Category>) response.body().getCategory();
+                    JSONResponse js = response.body();
+                    categories = new LinkedList<Category>(Arrays.asList(js.getData()));
+                    mAdapter = new CategoryAdapter(getActivity(), categories);
+                    mRecyclerView.setAdapter(mAdapter);
                 }
             }
 
             @Override
-            public void onFailure(Call<Category> call, Throwable t) {
+            public void onFailure(Call<JSONResponse> call, Throwable t) {
                 Log.e("Error HomeFragment", t.getMessage());
             }
         });
