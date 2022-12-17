@@ -101,6 +101,9 @@ public class Login_page extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
                     Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
+                    User a = response.body();
+                    String idUser = String.valueOf(a.getId());
+                    goToNextActivity.putExtra("id_user", idUser);
                     startActivity(goToNextActivity);
                 } else {
                     warning.setTextColor(Color.RED);

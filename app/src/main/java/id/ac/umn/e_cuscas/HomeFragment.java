@@ -124,7 +124,7 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
                 if(response.body() != null) {
                     JSONResponse js = response.body();
-                    categories = new LinkedList<Category>(Arrays.asList(js.getDataCategory()));
+                    categories = new LinkedList<>(Arrays.asList(js.getDataCategory()));
                     mAdapter = new CategoryAdapter(getActivity(), categories);
                     mRecyclerView.setAdapter(mAdapter);
                 }

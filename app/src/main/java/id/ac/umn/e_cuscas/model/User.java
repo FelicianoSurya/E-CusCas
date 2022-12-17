@@ -8,6 +8,10 @@ import java.util.List;
 public class User {
     //private List<User> user;
 
+    @SerializedName("id")
+    @Expose
+    private int id;
+
     @SerializedName("username")
     @Expose
     private String username;
@@ -33,7 +37,8 @@ public class User {
     private String phone;
 
 
-    public User(String username, String password, String name, String email, String addres, String phone) {
+    public User(int id, String username, String password, String name, String email, String addres, String phone) {
+        this.setId(id);
         this.setUsername(username);
         this.setPassword(password);
         this.setName(name);
@@ -44,6 +49,7 @@ public class User {
 
     public User() {}
 
+    public void setId(int id) { this.id = id; }
     public void setUsername(String username) { this.username = username; }
     public void setPassword(String passowrd) { this.password = passowrd; }
     public void setName(String name) { this.name = name; }
@@ -51,12 +57,13 @@ public class User {
     public void setAddress(String address) { this.address = address; }
     public void setPhone(String phone) { this.phone = phone; }
 
-    //public String getUsername() { return username; }
-    //public String getPassword() { return password; }
-    //public String getName() { return name; }
-    //public String getEmail() { return email; }
-    //public String getAddress() { return address; }
-    //public String getPhone() { return phone; }
+    public int getId() { return id; }
+    public String getUsername() { return username; }
+    public String getPassword() { return password; }
+    public String getName() { return name; }
+    public String getEmail() { return email; }
+    public String getAddress() { return address; }
+    public String getPhone() { return phone; }
 
 
     //public List<User> getUser() { return data; }

@@ -1,5 +1,6 @@
 package id.ac.umn.e_cuscas;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,10 +13,15 @@ import id.ac.umn.e_cuscas.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
 
+    private int idUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent i = getIntent();
+        idUser = Integer.parseInt(i.getStringExtra("id_user"));
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -27,7 +33,11 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new HomeFragment());
                     break;
                 case R.id.accessoris:
-                    replaceFragment(new AccessorisFragment());
+                    Bundle b = new Bundle();
+                    b.putInt("idUser", idUser);
+                    AccessorisFragment m = new AccessorisFragment();
+                    m.setArguments(b);
+                    replaceFragment(m);
                     break;
                 case R.id.myorder:
                     replaceFragment(new MyorderFragment());

@@ -1,6 +1,8 @@
 package id.ac.umn.e_cuscas;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import id.ac.umn.e_cuscas.model.Category;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatViewHolder> {
 
     private final LinkedList<Category> mDaftarCategory;
+//    private String Kat[];
     private LayoutInflater mInflater;
 
     private Context context;
@@ -54,11 +57,29 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
         public final TextView tvCat;
         final CategoryAdapter mAdapter;
 
-        public CatViewHolder(@NonNull View itemView, CategoryAdapter adapter){
+        public CatViewHolder(@NonNull View itemView, CategoryAdapter adapter) {
             super(itemView);
             ivCat = itemView.findViewById(R.id.ivCat);
             tvCat = itemView.findViewById(R.id.tvCat);
+//            Kat = new String[mDaftarCategory.size()];
             this.mAdapter = adapter;
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int mPos = getLayoutPosition();
+                    Category a = mDaftarCategory.get(mPos);
+                    String b = a.getName();
+                    String c = String.valueOf(a.getId());
+                    Intent intent = new Intent(context, DetailOrder.class);
+//                    for (int i=0; i<mDaftarCategory.size(); i++){
+//                        Kat[i] = mDaftarCategory.get(i).getName();
+//                    }
+                    intent.putExtra("jenis", b);
+                    intent.putExtra("id", c);
+//                    intent.putExtra("kategori", Kat);
+                    context.startActivity(intent);
+                }
+            });
+        }
     }
-}
 }

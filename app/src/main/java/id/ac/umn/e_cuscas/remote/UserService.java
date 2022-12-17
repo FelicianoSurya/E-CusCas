@@ -7,7 +7,10 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface UserService {
     @FormUrlEncoded
@@ -22,4 +25,15 @@ public interface UserService {
 
     @GET("v1/getCategory")
     Call<JSONResponse> getCategories();
+
+    @GET("v1/getProduct")
+    Call<JSONResponse> getProducts();
+
+    @GET("v1/getJenisBarang")
+    @Headers("Accept: application/json")
+    Call<JSONResponse> getJenises(@Query("idKategori") int idKategori);
+
+    @GET("v1/getOrderDetail/{iduser}")
+    @Headers("Accept: application/json")
+    Call<JSONResponse> getProductCheck(@Path("iduser") int iduser);
 }
