@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -45,6 +47,8 @@ public class HomeFragment extends Fragment {
     private LinkedList<Category> categories;
     private RecyclerView mRecyclerView;
     private CategoryAdapter mAdapter;
+
+    private GridLayoutManager glm;
 
     public HomeFragment() {
     }
@@ -88,7 +92,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclesviewCat);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        glm = new GridLayoutManager(getActivity(), 3, GridLayoutManager.VERTICAL, false);
+        mRecyclerView.setLayoutManager(glm);
 
         ImageButton Promo = (ImageButton) view.findViewById(R.id.tvPromo);
 

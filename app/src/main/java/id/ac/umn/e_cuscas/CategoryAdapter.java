@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.LinkedList;
 
 import id.ac.umn.e_cuscas.model.Category;
@@ -37,8 +39,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.CatViewHolder holder, int position) {
         Category mCurr = mDaftarCategory.get(position);
-//        int img = context.getResources().getIdentifier("@drawable/"+mCurr.getImage(), null, context.getPackageName());
-//        holder.ivCat.setImageResource(img
+        String url = mCurr.getImage();
+        Picasso.get().load(url).into(holder.ivCat);
         holder.tvCat.setText(mCurr.getName());
     }
 
