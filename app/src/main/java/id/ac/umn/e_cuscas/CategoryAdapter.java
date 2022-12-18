@@ -21,13 +21,15 @@ import id.ac.umn.e_cuscas.model.Category;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatViewHolder> {
 
     private final LinkedList<Category> mDaftarCategory;
+    private String midUser;
 //    private String Kat[];
     private LayoutInflater mInflater;
 
     private Context context;
 
-    public CategoryAdapter(Context context, LinkedList<Category> daftarCat) {
+    public CategoryAdapter(Context context, LinkedList<Category> daftarCat, int idUser) {
         mInflater = LayoutInflater.from(context);
+        midUser = String.valueOf(idUser);
         mDaftarCategory = daftarCat;
         this.context = context;
     }
@@ -76,6 +78,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
 //                    }
                     intent.putExtra("jenis", b);
                     intent.putExtra("id", c);
+                    intent.putExtra("idUser", midUser);
 //                    intent.putExtra("kategori", Kat);
                     context.startActivity(intent);
                 }

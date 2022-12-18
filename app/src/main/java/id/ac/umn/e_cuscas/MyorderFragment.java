@@ -67,15 +67,6 @@ public class MyorderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_myorder, container, false);
-        AppCompatButton OnProgress = (AppCompatButton) view.findViewById(R.id.btnOnProgress);
-
-        OnProgress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), OnProgress.class);
-                startActivity(intent);
-            }
-        });
 
         return view;
     }

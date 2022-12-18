@@ -54,15 +54,14 @@
                 android:paddingStart="5dp"
                 android:text="Alamat" />
 
-            <TextView
-                android:id="@+id/textView18"
+            <EditText
+                android:id="@+id/etAksesorisAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_sans"
                 android:paddingLeft="5dp"
                 android:paddingTop="10dp"
-                android:paddingBottom="5dp"
-                android:text="Jl. Samosir II Blok Z12/6, Kota Tangerang Selatan, Banten" />
+                android:paddingBottom="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,21 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical" >
 
                     <TextView
                         android:layout_width="match_parent"
@@ -112,88 +97,100 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/nunito_extrabold"
                         android:paddingLeft="5dp"
-                        android:text="Stampel" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nunito_sans"
-                        android:gravity="end"
-                        android:paddingLeft="5dp"
-                        android:text="Rp 20.000" />
+                        android:text="Harga"
+                        android:gravity="right"/>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclesviewDetProdOrder"
+                tools:listitem="@layout/detprodorder_item"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="0dp">
+                android:layout_height="wrap_content" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingTop="0dp">-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="25dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nunito_extrabold"
-                        android:paddingLeft="5dp"
-                        android:text="Sticker" />
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="vertical">-->
 
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="25dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:fontFamily="@font/nunito_extrabold"-->
+<!--                        android:paddingLeft="5dp"-->
+<!--                        android:text="Stampel" />-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+<!--                </LinearLayout>-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nunito_sans"
-                        android:gravity="end"
-                        android:paddingLeft="5dp"
-                        android:text="Rp 10.000" />
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="vertical">-->
 
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:fontFamily="@font/nunito_sans"-->
+<!--                        android:gravity="end"-->
+<!--                        android:paddingLeft="5dp"-->
+<!--                        android:text="Rp 20.000" />-->
 
-            </LinearLayout>
+<!--                </LinearLayout>-->
 
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/nunito_extrabold"
-                android:paddingLeft="5dp"
-                android:text="Keterangan Tambahan" />
+<!--            </LinearLayout>-->
 
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_sans"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="10dp"
-                android:text="Dikasih space 0.2cm agar tidak terlalu ketat" />
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingTop="0dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="25dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:fontFamily="@font/nunito_extrabold"-->
+<!--                        android:paddingLeft="5dp"-->
+<!--                        android:text="Sticker" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:fontFamily="@font/nunito_sans"-->
+<!--                        android:gravity="end"-->
+<!--                        android:paddingLeft="5dp"-->
+<!--                        android:text="Rp 10.000" />-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -223,14 +220,10 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
+                    <Spinner
+                        android:id="@+id/sMetodePem"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nunito_sans"
-                        android:gravity="end"
-                        android:paddingLeft="5dp"
-                        android:text="JNE" />
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -366,7 +359,7 @@
                         android:fontFamily="@font/nunito_sans"
                         android:gravity="end"
                         android:paddingLeft="5dp"
-                        android:text="Rp 10.000" />
+                        android:text="Rp 10000" />
 
                 </LinearLayout>
 
@@ -442,13 +435,13 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvAksesorisTotal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/nunito_sans"
                         android:gravity="end"
-                        android:paddingLeft="5dp"
-                        android:text="Rp 200.000" />
+                        android:paddingLeft="5dp" />
 
                 </LinearLayout>
 

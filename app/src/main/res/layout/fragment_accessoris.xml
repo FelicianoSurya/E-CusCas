@@ -472,6 +472,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclesviewDetProd"
+                tools:listitem="@layout/detprod_item"
                 android:layout_width="match_parent"
                 android:layout_height="270dp" />
 
@@ -480,6 +481,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDetProd"
         android:layout_width="277dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"

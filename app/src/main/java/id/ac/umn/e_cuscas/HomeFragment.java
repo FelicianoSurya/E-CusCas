@@ -42,6 +42,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private int idUser;
 
     private UserService userService;
     private LinkedList<Category> categories;
@@ -86,6 +87,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        //idUser = this.getArguments().getInt("idUser");
+
         userService = APIUtils.getUserService();
         getCat();
 
@@ -125,7 +128,7 @@ public class HomeFragment extends Fragment {
                 if(response.body() != null) {
                     JSONResponse js = response.body();
                     categories = new LinkedList<>(Arrays.asList(js.getDataCategory()));
-                    mAdapter = new CategoryAdapter(getActivity(), categories);
+                    mAdapter = new CategoryAdapter(getActivity(), categories, idUser);
                     mRecyclerView.setAdapter(mAdapter);
                 }
             }

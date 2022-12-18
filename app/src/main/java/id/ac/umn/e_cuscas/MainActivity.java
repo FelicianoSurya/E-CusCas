@@ -2,6 +2,7 @@ package id.ac.umn.e_cuscas;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -26,17 +27,19 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
+        Bundle a = new Bundle();
+        a.putInt("idUser", idUser);
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch(item.getItemId()){
                 case R.id.home:
-                    replaceFragment(new HomeFragment());
+                    HomeFragment n = new HomeFragment();
+                    n.setArguments(a);
+                    replaceFragment(n);
                     break;
                 case R.id.accessoris:
-                    Bundle b = new Bundle();
-                    b.putInt("idUser", idUser);
                     AccessorisFragment m = new AccessorisFragment();
-                    m.setArguments(b);
+                    m.setArguments(a);
                     replaceFragment(m);
                     break;
                 case R.id.myorder:

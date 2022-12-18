@@ -79,73 +79,6 @@
                 android:spinnerMode="dropdown"
                 android:layout_marginBottom="5dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvPanjang"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nunito_extrabold"
-                        android:paddingLeft="5dp"
-                        android:text="Panjang" />
-
-                    <TextView
-                        android:id="@+id/tvPanjangIsi"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_weight="1"
-                        android:ems="10" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvLebar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nunito_extrabold"
-                        android:paddingLeft="5dp"
-                        android:text="Lebar" />
-
-                    <TextView
-                        android:id="@+id/tvLebarIsi"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_weight="1"
-                        android:ems="10" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tvTinggi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_extrabold"
-                android:paddingLeft="5dp"
-                android:text="Tinggi" />
-
-            <TextView
-                android:id="@+id/tvTinggiIsi"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:ems="10" />
-
             <TextView
                 android:id="@+id/tvWarna"
                 android:layout_width="match_parent"
@@ -174,11 +107,25 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btnGambar"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Upload Gambar" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnGambarUpl"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Upload Gambar" />
+
+                    <Button
+                        android:id="@+id/btnGambarCam"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ambil Gambar" />
+
+
+                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/ivGambar"
@@ -217,22 +164,6 @@
                 android:layout_height="wrap_content"
                 android:spinnerMode="dropdown"
                 android:layout_marginBottom="5dp" />
-
-            <TextView
-                android:id="@+id/tvKeterangan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_extrabold"
-                android:paddingLeft="5dp"
-                android:text="Keterangan Tambahan" />
-
-            <EditText
-                android:id="@+id/evKeterangan"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         </LinearLayout>
 

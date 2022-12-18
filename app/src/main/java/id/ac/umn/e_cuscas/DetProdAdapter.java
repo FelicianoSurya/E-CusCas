@@ -1,12 +1,14 @@
 package id.ac.umn.e_cuscas;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.LinkedList;
 
+import id.ac.umn.e_cuscas.model.OrderProdPost;
 import id.ac.umn.e_cuscas.model.ProductCheck;
 import id.ac.umn.e_cuscas.remote.APIUtils;
 import id.ac.umn.e_cuscas.remote.UserService;
@@ -26,13 +29,15 @@ import retrofit2.Response;
 public class DetProdAdapter extends RecyclerView.Adapter<DetProdAdapter.DPViewHolder> {
 
     private final LinkedList<ProductCheck.DetProduct> mDaftarDetprod;
+    private int midUser;
     private UserService userService;
     private LayoutInflater mInflater;
     private Context context;
 
-    public DetProdAdapter(Context context, LinkedList<ProductCheck.DetProduct> daftarDetprod){
+    public DetProdAdapter(Context context, LinkedList<ProductCheck.DetProduct> daftarDetprod, int idUser){
         mInflater = LayoutInflater.from(context);
         mDaftarDetprod = daftarDetprod;
+        midUser = idUser;
         this.context = context;
     }
 
@@ -72,43 +77,80 @@ public class DetProdAdapter extends RecyclerView.Adapter<DetProdAdapter.DPViewHo
             userService = APIUtils.getUserService();
             this.mAdapter = adapter;
 
-//             btnTambah.setOnClickListener(new View.OnClickListener() {
-//                 @Override
-//                 public void onClick(View view) {
-//                     int mPos = getLayoutPosition();
-//                     ProductCheck.DetProduct a = mDaftarDetprod.get(mPos);
-//                     Call<DetProdAdapter> call = userService.gantiJumlah(a.getId(), "+");
-//                     call.enqueue(new Callback<DetProdAdapter>() {
-//                         @Override
-//                         public void onResponse(Call<DetProdAdapter> call, Response<DetProdAdapter> response) {
+             btnTambah.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View view) {
+                     int mPos = getLayoutPosition();
+                     ProductCheck.DetProduct a = mDaftarDetprod.get(mPos);
+                     Call<DetProdAdapter> call = userService.gantiJumlah(a.getId(), "+");
+                     call.enqueue(new Callback<DetProdAdapter>() {
+                         @Override
+                         public void onResponse(Call<DetProdAdapter> call, Response<DetProdAdapter> response) {
 //                             AppCompatActivity a = (AppCompatActivity) view.getContext();
 //                             AccessorisFragment f = new AccessorisFragment();
 //                             a.getSupportFragmentManager().beginTransaction().replace(androidx.fragment.R.id.fragment_container_view_tag, f).addToBackStack(null).commit();
-//                         }
-//
-//                         @Override
-//                         public void onFailure(Call<DetProdAdapter> call, Throwable t) {
-//
-//                         }
-//                     });
-//                 }
-//             });
+                         }
+
+                         @Override
+                         public void onFailure(Call<DetProdAdapter> call, Throwable t) {
+
+                         }
+                     });
+                     tvDetjumlah.setText("" + (Integer.parseInt(tvDetjumlah.getText().toString()) + 1));
+                 }
+             });
 
             btnKurang.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int mPos = getLayoutPosition();
                     ProductCheck.DetProduct a = mDaftarDetprod.get(mPos);
-                    Call<DetProdAdapter> call = userService.gantiJumlah(a.getId(), "-");
-                    call.enqueue(new Callback<DetProdAdapter>() {
+                    if(a.getJumlah() != 1){
+                        Call<DetProdAdapter> call = userService.gantiJumlah(a.getId(), "-");
+                        call.enqueue(new Callback<DetProdAdapter>() {
+                            @Override
+                            public void onResponse(Call<DetProdAdapter> call, Response<DetProdAdapter> response) {
+//                            notifyDataSetChanged();
+                            }
+
+                            @Override
+                            public void onFailure(Call<DetProdAdapter> call, Throwable t) {
+
+                            }
+                        });
+                        tvDetjumlah.setText("" + (Integer.parseInt(tvDetjumlah.getText().toString()) - 1));
+                    } else {
+                        Call<OrderProdPost> call = userService.deleteProdPost(a.getId_barang(),midUser);
+                        call.enqueue(new Callback<OrderProdPost>() {
+                            @Override
+                            public void onResponse(Call<OrderProdPost> call, Response<OrderProdPost> response) {
+                                Toast.makeText(view.getContext(), "Item berhasil dihapus", Toast.LENGTH_LONG).show();
+                            }
+
+                            @Override
+                            public void onFailure(Call<OrderProdPost> call, Throwable t) {
+                                Log.e("Error DetProdAdapter", t.getMessage());
+                            }
+                        });
+                    }
+                }
+            });
+
+            btnDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int mPos = getLayoutPosition();
+                    ProductCheck.DetProduct a = mDaftarDetprod.get(mPos);
+                    Call<OrderProdPost> call = userService.deleteProdPost(a.getId_barang(),midUser);
+                    call.enqueue(new Callback<OrderProdPost>() {
                         @Override
-                        public void onResponse(Call<DetProdAdapter> call, Response<DetProdAdapter> response) {
-                            notifyDataSetChanged();
+                        public void onResponse(Call<OrderProdPost> call, Response<OrderProdPost> response) {
+                            Toast.makeText(view.getContext(), "Item berhasil dihapus", Toast.LENGTH_LONG).show();
                         }
 
                         @Override
-                        public void onFailure(Call<DetProdAdapter> call, Throwable t) {
-
+                        public void onFailure(Call<OrderProdPost> call, Throwable t) {
+                            Log.e("Error DetProdAdapter", t.getMessage());
                         }
                     });
                 }
