@@ -92,7 +92,7 @@ public class AccessorisFragment extends Fragment {
         idUser = this.getArguments().getInt("idUser");
         userService = APIUtils.getUserService();
         getProd();
-        getProdCheck();
+        //getProdCheck();
 
         View view = inflater.inflate(R.layout.fragment_accessoris, container, false);
 
@@ -106,16 +106,53 @@ public class AccessorisFragment extends Fragment {
         return view;
     }
 
-    private void getProd(){
+    private void getProd() {
         Call<JSONResponse> call = userService.getProducts();
         call.enqueue(new Callback<JSONResponse>() {
             @Override
             public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
-                if(response.body() != null){
+                if (response.body() != null) {
                     JSONResponse js = response.body();
-                    products = new LinkedList<Product>(Arrays.asList(js.getDataProduct()));
+                    products = new LinkedList<>(Arrays.asList(js.getDataProduct()));
                     mAdapter = new ProductAdapter(getActivity(), products);
                     mRecyclerView.setAdapter(mAdapter);
+
+                    Call<JSONResponse> calling = userService.getProductCheck(2);
+                    calling.enqueue(new Callback<JSONResponse>() {
+                        @Override
+                        public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
+                            if (response.isSuccessful()) {
+                                JSONResponse js = response.body();
+                                detProductUser = new LinkedList<>(Arrays.asList(js.getDataDetProduct()));
+                                for (int a = 0; a < detProductUser.size(); a++) {
+                                    detProduct = new LinkedList<>(detProductUser.get(a).getDetail_barang());
+                                    for (int p = 0; p < detProduct.size(); p++) {
+                                        for (int l = 0; l < products.size(); l++) {
+                                            if (detProduct.get(p).getId_barang() == products.get(l).getId()) {
+                                                detProduct.get(p).setName(products.get(l).getName());
+                                            }
+                                        }
+                                    }
+                                    mAdapterDP = new DetProdAdapter(getActivity(), detProduct);
+                                    mRecyclerViewDP.setAdapter(mAdapterDP);
+                                    break;
+                                }
+                            } else {
+                                try {
+                                    Log.e("error", response.errorBody().string());
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<JSONResponse> call, Throwable t) {
+                            t.printStackTrace();
+                        }
+                    });
+
+
                 }
             }
 
@@ -125,34 +162,33 @@ public class AccessorisFragment extends Fragment {
             }
         });
     }
-
-    private void getProdCheck(){
-        Call<JSONResponse> call = userService.getProductCheck(2);
-        call.enqueue(new Callback<JSONResponse>() {
-            @Override
-            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
-                if(response.isSuccessful()){
-                    JSONResponse js = response.body();
-                    detProductUser = new LinkedList<>(Arrays.asList(js.getDataDetProduct()));
-                    for(int a=0; a<detProductUser.size(); a++){
-                        detProduct = new LinkedList<>(detProductUser.get(a).getDetail_barang());
-                        mAdapterDP = new DetProdAdapter(getActivity(), detProduct);
-                        mRecyclerViewDP.setAdapter(mAdapterDP);
-                        break;
-                    }
-                } else {
-                    try {
-                        Log.e("error", response.errorBody().string());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<JSONResponse> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
-    }
 }
+
+//    private void getProdCheck(){
+//        Call<JSONResponse> call = userService.getProductCheck(2);
+//        call.enqueue(new Callback<JSONResponse>() {
+//            @Override
+//            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
+//                if(response.isSuccessful()){
+//                    JSONResponse js = response.body();
+//                    detProductUser = new LinkedList<>(Arrays.asList(js.getDataDetProduct()));
+//                    for(int a=0; a<detProductUser.size(); a++){
+//                        detProduct = new LinkedList<>(detProductUser.get(a).getDetail_barang());
+//                        mAdapterDP = new DetProdAdapter(getActivity(), detProduct);
+//                        mRecyclerViewDP.setAdapter(mAdapterDP);
+//                        break;
+//                    }
+//                } else {
+//                    try {
+//                        Log.e("error", response.errorBody().string());
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<JSONResponse> call, Throwable t) {
+//                t.printStackTrace();
+//            }
+//        });

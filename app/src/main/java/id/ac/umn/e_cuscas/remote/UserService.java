@@ -1,5 +1,6 @@
 package id.ac.umn.e_cuscas.remote;
 
+import id.ac.umn.e_cuscas.DetProdAdapter;
 import id.ac.umn.e_cuscas.model.Category;
 import id.ac.umn.e_cuscas.model.User;
 import retrofit2.Call;
@@ -36,4 +37,11 @@ public interface UserService {
     @GET("v1/getOrderDetail/{iduser}")
     @Headers("Accept: application/json")
     Call<JSONResponse> getProductCheck(@Path("iduser") int iduser);
+
+    @FormUrlEncoded
+    @POST("v1/updateDetailBarang")
+    Call<DetProdAdapter> gantiJumlah(
+            @Field("id") int id,
+            @Field("stat") String stat
+    );
 }

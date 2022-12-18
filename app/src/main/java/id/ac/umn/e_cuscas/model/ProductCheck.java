@@ -56,20 +56,30 @@ public class ProductCheck {
         @Expose
         private int harga;
 
+        private String name;
+
+        public void setId(int id) { this.id = id; }
+        public void setId_barang(int id_barang) { this.id_barang = id_barang; }
+        public void setJumlah(int jumlah) { this.jumlah = jumlah; }
+        public void setHarga(int harga) { this.harga = harga; }
+        public void setName(String name) { this.name = name; }
+
         public int getId() {
             return id;
         }
-
         public int getId_barang() {
             return id_barang;
         }
-
         public int getJumlah() {
             return jumlah;
         }
-
         public int getHarga() {
             return harga;
+        }
+        public String getName() { return name; }
+
+        public void tambahJumlah(){
+            this.jumlah += 1;
         }
     }
 }

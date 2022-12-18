@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -16,10 +17,16 @@ import com.squareup.picasso.Picasso;
 import java.util.LinkedList;
 
 import id.ac.umn.e_cuscas.model.ProductCheck;
+import id.ac.umn.e_cuscas.remote.APIUtils;
+import id.ac.umn.e_cuscas.remote.UserService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DetProdAdapter extends RecyclerView.Adapter<DetProdAdapter.DPViewHolder> {
 
     private final LinkedList<ProductCheck.DetProduct> mDaftarDetprod;
+    private UserService userService;
     private LayoutInflater mInflater;
     private Context context;
 
@@ -39,7 +46,7 @@ public class DetProdAdapter extends RecyclerView.Adapter<DetProdAdapter.DPViewHo
     @Override
     public void onBindViewHolder(@NonNull DetProdAdapter.DPViewHolder holder, int position) {
         ProductCheck.DetProduct mCurr = mDaftarDetprod.get(position);
-        //holder.tvDetnama.setText("");
+        holder.tvDetnama.setText(mCurr.getName());
         holder.tvDetharga.setText("Rp " + mCurr.getHarga());
         holder.tvDetjumlah.setText(String.valueOf(mCurr.getJumlah()));
     }
@@ -62,7 +69,50 @@ public class DetProdAdapter extends RecyclerView.Adapter<DetProdAdapter.DPViewHo
             btnTambah = itemView.findViewById(R.id.btnTambah);
             btnKurang = itemView.findViewById(R.id.btnKurang);
             btnDelete = itemView.findViewById(R.id.btnDelete);
+            userService = APIUtils.getUserService();
             this.mAdapter = adapter;
+
+//             btnTambah.setOnClickListener(new View.OnClickListener() {
+//                 @Override
+//                 public void onClick(View view) {
+//                     int mPos = getLayoutPosition();
+//                     ProductCheck.DetProduct a = mDaftarDetprod.get(mPos);
+//                     Call<DetProdAdapter> call = userService.gantiJumlah(a.getId(), "+");
+//                     call.enqueue(new Callback<DetProdAdapter>() {
+//                         @Override
+//                         public void onResponse(Call<DetProdAdapter> call, Response<DetProdAdapter> response) {
+//                             AppCompatActivity a = (AppCompatActivity) view.getContext();
+//                             AccessorisFragment f = new AccessorisFragment();
+//                             a.getSupportFragmentManager().beginTransaction().replace(androidx.fragment.R.id.fragment_container_view_tag, f).addToBackStack(null).commit();
+//                         }
+//
+//                         @Override
+//                         public void onFailure(Call<DetProdAdapter> call, Throwable t) {
+//
+//                         }
+//                     });
+//                 }
+//             });
+
+            btnKurang.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int mPos = getLayoutPosition();
+                    ProductCheck.DetProduct a = mDaftarDetprod.get(mPos);
+                    Call<DetProdAdapter> call = userService.gantiJumlah(a.getId(), "-");
+                    call.enqueue(new Callback<DetProdAdapter>() {
+                        @Override
+                        public void onResponse(Call<DetProdAdapter> call, Response<DetProdAdapter> response) {
+                            notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onFailure(Call<DetProdAdapter> call, Throwable t) {
+
+                        }
+                    });
+                }
+            });
         }
     }
 }
