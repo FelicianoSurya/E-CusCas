@@ -19,7 +19,7 @@
             android:name=".History"
             android:exported="false" />
         <activity
-            android:name=".Login_page"
+            android:name=".Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +40,7 @@
         <activity android:name=".AksesorisDetailOrderTransaction" />
 
         <activity android:name=".OnProgress" />
+        <activity android:name=".Login_page" />
 
         <meta-data
             android:name="preloaded_fonts"
