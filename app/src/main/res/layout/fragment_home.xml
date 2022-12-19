@@ -73,7 +73,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/nunito_sans"
                             android:gravity="end"
-                            android:text="Samantha"
+                            android:text="Welcome to E-CusCas"
                             android:textSize="10dp" />
 
                     </LinearLayout>

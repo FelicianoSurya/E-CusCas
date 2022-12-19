@@ -13,7 +13,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="139dp"
-        android:background="@drawable/rounded_layout3"
+        android:background="@color/BoldOrange"
         android:backgroundTint="#FFC107"
         android:elevation="10dp"
         android:gravity="center"
@@ -24,20 +24,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/btnDiskon"
             android:layout_width="47dp"
             android:layout_height="74dp"
             android:layout_margin="15dp"
             android:layout_weight="1"
-            android:background="@drawable/left_arrow" />
+            android:background="@drawable/left_arrow"
+            android:onClick="tvDiskon"
+            tools:ignore="OnClick" />
 
         <TextView
             android:id="@+id/textView24"
-            android:layout_width="100dp"
+            android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:fontFamily="@font/nunito_extrabold"
+            android:lineSpacingExtra="-10dp"
             android:text="Diskon Sampai"
             android:textAlignment="center"
             android:textColor="#BF000000"
@@ -46,46 +49,35 @@
 
         <TextView
             android:id="@+id/textView28"
-            android:layout_width="86dp"
+            android:layout_width="60dp"
             android:layout_height="52dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="60dp"
             android:layout_weight="1"
             android:fontFamily="@font/nunito_extrabold"
             android:text="80%"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="34sp"
-            tools:layout_gravity="center" />
-
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/nunito_extrabold"
-            android:text="*S&amp;K Berlaku"
-            android:textAlignment="center"
-            android:textColor="#BF000000"
-            android:textSize="8sp"
+            android:textSize="40dp"
             tools:layout_gravity="center" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="424dp"
-        android:layout_height="457dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
         android:background="@drawable/rounded_layout3"
         android:elevation="10dp"
         android:gravity="clip_horizontal|center|clip_vertical|top"
         android:orientation="vertical"
         android:visibility="visible"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="139dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/textView36"
+            android:paddingTop="30dp
+"
             android:layout_width="312dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -149,21 +141,6 @@
             android:textAlignment="center"
             android:textColor="#80000000"
             android:textSize="12sp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton"
-            android:layout_width="284dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="90dp"
-            android:background="@drawable/rounded_button"
-            android:elevation="30dp"
-            android:paddingHorizontal="70dp"
-            android:text="Use"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
     </LinearLayout>
 
