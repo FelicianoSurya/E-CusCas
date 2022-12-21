@@ -97,6 +97,7 @@ public class AksesorisDetailOrderTransaction extends AppCompatActivity {
                         public void onResponse(Call<OrderProd> call, Response<OrderProd> response) {
                             if(response.isSuccessful()){
                                 Intent goToNextActivity = new Intent(AksesorisDetailOrderTransaction.this, OrderAccept.class);
+                                goToNextActivity.putExtra("id_user", String.valueOf(idUser));
                                 startActivity(goToNextActivity);
                             } else {
                                 Log.e("Error database", response.errorBody().toString());

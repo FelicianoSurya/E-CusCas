@@ -30,6 +30,8 @@ public class MyorderFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private int idUser;
+
     private ConstraintLayout tab1;
 
     public MyorderFragment() {
@@ -67,6 +69,8 @@ public class MyorderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_myorder, container, false);
+
+        idUser = this.getArguments().getInt("idUser");
 
         return view;
     }

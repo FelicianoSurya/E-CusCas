@@ -2,6 +2,7 @@ package id.ac.umn.e_cuscas;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -18,6 +19,8 @@ import id.ac.umn.e_cuscas.model.HistoryorderCategory;
 import id.ac.umn.e_cuscas.remote.APIUtils;
 import id.ac.umn.e_cuscas.remote.UserService;
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DetailOrderTransaction extends AppCompatActivity {
 
@@ -97,8 +100,20 @@ public class DetailOrderTransaction extends AppCompatActivity {
                         ket = " ";
                     }
                     Call<HistoryorderCategory> call = userService.orderCat(idUser, sMetodePembayaran.getSelectedItem().toString(), idKat, Aksesoris, ongkir, jenis_barang, warna, bahan, alam, voucher, gambar, ket);
-                    Intent goToNextActivity = new Intent(getApplicationContext(), OrderAccept.class);
-                    startActivity(goToNextActivity);
+                    call.enqueue(new Callback<HistoryorderCategory>() {
+                        @Override
+                        public void onResponse(Call<HistoryorderCategory> call, Response<HistoryorderCategory> response) {
+                            Intent goToNextActivity = new Intent(getApplicationContext(), OrderAccept.class);
+                            goToNextActivity.putExtra("id_user", String.valueOf(idUser));
+                            startActivity(goToNextActivity);
+                        }
+
+                        @Override
+                        public void onFailure(Call<HistoryorderCategory> call, Throwable t) {
+                            Log.e("Error DetailOrderTransaction", t.getMessage());
+                        }
+                    });
+
                 }
 
             }

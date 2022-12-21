@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(m);
                     break;
                 case R.id.myorder:
-                    replaceFragment(new MyorderFragment());
+                    MyorderFragment q = new MyorderFragment();
+                    q.setArguments(a);
+                    replaceFragment(q);
                     break;
                 case R.id.chat:
                     replaceFragment(new ChatFragment());
