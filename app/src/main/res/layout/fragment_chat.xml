@@ -16,6 +16,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="Cooming Soon"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab1" />
+
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
@@ -26,25 +39,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
-                android:id="@+id/backChat"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="15dp"
-                android:layout_weight="2"
-                android:background="@drawable/left_arrow"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_extrabold"
-                android:paddingRight="75dp"
-                android:text="Live Chat"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="30dp"
-                tools:layout_gravity="center" />
+                <TextView
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:paddingRight="0dp"
+                    android:text="Live Chat"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_gravity="center" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,24 +67,10 @@
             android:layout_height="100dp"
             android:background="@drawable/rounded_layout2"
             android:elevation="3dp"
-            app:layout_constraintCircleRadius="300dp"
+            app:layout_constraintCircleRadius="600dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="324dp"
-                android:layout_height="58dp"
-                android:text="We are online! Please type your message or comment and we will connect you to one of our operators right away..."
-                android:textAlignment="center"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout6"
@@ -103,65 +103,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.061" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tab1">
-
-            <ImageView
-                android:id="@+id/profilechat1"
-                android:layout_width="110dp"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="15dp"
-                android:layout_weight="1"
-                android:src="@drawable/circle_background" />
-
-            <TextView
-                android:id="@+id/chat1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_button"
-                android:backgroundTint="@color/LightOrange"
-                android:padding="15dp"
-                android:text="Hello, can i help you?" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_button"
-                android:backgroundTint="@color/LightOrange"
-                android:padding="15dp"
-                android:text="Hello, can i help you?"
-                android:textAlignment="gravity" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="110dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
-                android:layout_weight="1"
-                android:src="@drawable/circle_background" />
-
-        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

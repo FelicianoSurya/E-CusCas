@@ -20,17 +20,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="257dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rounded_button"
-            android:paddingHorizontal="40dp"
-            android:text="History"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="36dp"
+                android:fontFamily="@font/nunito_extrabold"
+                android:text="History"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_gravity="center" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

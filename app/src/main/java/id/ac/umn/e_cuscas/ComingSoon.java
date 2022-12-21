@@ -4,24 +4,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
-public class Promo_page extends AppCompatActivity {
+public class ComingSoon extends AppCompatActivity {
 
-    private ImageButton btnDiskon;
+    private Button ComingSoon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.promo_detail);
+        setContentView(R.layout.coming_soon);
 
-        btnDiskon = (ImageButton) findViewById(R.id.btnDiskon);
-        btnDiskon.setOnClickListener(new View.OnClickListener() {
+        ComingSoon= (Button) findViewById(R.id.btnComingSoon);
+        ComingSoon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Promo_page.this, Login_page.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
