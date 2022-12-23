@@ -25,7 +25,7 @@ public class OrderAccept extends AppCompatActivity {
         Accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent goToNextActivity = new Intent(getApplicationContext(), Login_page.class);
+                Intent goToNextActivity = new Intent(getApplicationContext(), MainActivity.class);
                 goToNextActivity.putExtra("id_user", idUser);
                 startActivity(goToNextActivity);
             }

@@ -103,10 +103,15 @@ public class DetailOrderTransaction extends AppCompatActivity {
                     call.enqueue(new Callback<HistoryorderCategory>() {
                         @Override
                         public void onResponse(Call<HistoryorderCategory> call, Response<HistoryorderCategory> response) {
-                            Intent goToNextActivity = new Intent(getApplicationContext(), OrderAccept.class);
-                            goToNextActivity.putExtra("id_user", String.valueOf(idUser));
-                            startActivity(goToNextActivity);
+                            if(response.isSuccessful()){
+                                Intent goToNextActivity = new Intent(getApplicationContext(), OrderAccept.class);
+                                goToNextActivity.putExtra("id_user", String.valueOf(idUser));
+                                startActivity(goToNextActivity);
+                            } else {
+                                Log.e("Error response", response.errorBody().toString());
+                            }
                         }
+
 
                         @Override
                         public void onFailure(Call<HistoryorderCategory> call, Throwable t) {

@@ -26,9 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new HomeFragment());
         Bundle a = new Bundle();
         a.putInt("idUser", idUser);
+        HomeFragment p = new HomeFragment();
+        p.setArguments(a);
+        replaceFragment(p);
+//        replaceFragment(new HomeFragment());
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch(item.getItemId()){

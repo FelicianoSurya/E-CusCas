@@ -88,4 +88,12 @@ public interface UserService {
             @Field("gambar") String gambar,
             @Field("keterangan") String keterangan
     );
+
+    @GET("v1/getOrder/{iduser}")
+    @Headers("Accept: application/json")
+    Call<JSONResponse> getDataCatOrderHist(@Path("iduser") int iduser);
+
+    @GET("v1/getOrderBarang/{iduser}")
+    @Headers("Accept: application/json")
+    Call<JSONResponse> getDataProdOrderHist(@Path("iduser") int iduser);
 }

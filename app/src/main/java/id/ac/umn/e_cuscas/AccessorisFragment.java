@@ -36,31 +36,17 @@ import retrofit2.Response;
 // */
 public class AccessorisFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     private UserService userService;
     private LinkedList<Product> products;
     private RecyclerView mRecyclerView, mRecyclerViewDP;
     private ProductAdapter mAdapter;
     private DetProdAdapter mAdapterDP;
-
     private ArrayList<String> detProdNama;
     private ArrayList<Integer> detProdHarga, detProdJumlah;
-
     private LinkedList<ProductCheck> detProductUser;
     private LinkedList<ProductCheck.DetProduct> detProduct;
-
     private Button btnDetProd;
-
     private int idUser;
-
     private GridLayoutManager glm;
 
     public AccessorisFragment() {
